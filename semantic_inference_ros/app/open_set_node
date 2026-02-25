@@ -57,7 +57,7 @@ class OpenSetNode(Node):
             FeatureVectorStamped, "semantic/feature", 1
         )
         self._worker = semantic_inference_ros.ImageWorker(
-            self, self.config.worker, "color/image_raw", self._spin_once
+            self, self.config.worker, "/camera/daheng/left/image_rect", self._spin_once
         )
         self._embedder = semantic_inference_ros.PromptEncoder(self, self._model.encoder)
         self._visualizer = self.config.visualizer.create()
